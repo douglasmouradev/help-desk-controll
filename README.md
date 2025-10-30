@@ -62,15 +62,16 @@ help-desk-controll/
 ├── database/               # Scripts de banco de dados
 ├── docs/                   # Documentação
 ├── tests/                  # Testes do sistema
-└── test-*.html            # Páginas de teste
+│   └── html/              # Páginas de teste (HTML)
+└── assets/                # Imagens/estáticos
 ```
 
 ## 🧪 Páginas de Teste
 
-- **`test.html`** - Teste simples do sistema
-- **`test-final.html`** - Teste completo com demonstração
-- **`test-cores.html`** - Demonstração da paleta de cores
-- **`test-logo.html`** - Teste da logo em diferentes tamanhos
+- **`tests/html/test.html`** - Teste simples do sistema
+- **`tests/html/test-final.html`** - Teste completo com demonstração
+- **`tests/html/test-cores.html`** - Demonstração da paleta de cores
+- **`tests/html/test-logo.html`** - Teste da logo em diferentes tamanhos
 
 ## 🔧 Tecnologias Utilizadas
 
