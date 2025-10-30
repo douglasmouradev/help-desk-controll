@@ -1,157 +1,154 @@
-# Sistema Help Desk - Controll IT
+# 🚀 Controll IT Help Desk
 
-Sistema web completo de help desk com 3 níveis de acesso, desenvolvido com HTML, CSS e JavaScript puro.
+Sistema completo de gestão de chamados técnicos desenvolvido para a Controll IT Engineering Technology.
 
-## 🚀 Funcionalidades
+## 🎨 Características Principais
 
-### 🔐 Sistema de Autenticação
+### ✨ Interface Moderna
+- **Design responsivo** com paleta de cores vermelho e azul
+- **Logo oficial** da Controll IT integrada
+- **Interface intuitiva** e fácil de usar
+- **Animações suaves** e efeitos visuais modernos
 
-* **3 Níveis de Acesso:**  
-   * **Usuário Padrão:** Abertura de chamados e visualização dos próprios chamados  
-   * **Agente de Suporte:** Visualização de todos os chamados, alteração de status e atribuição  
-   * **Administrador:** Todas as permissões + gerenciamento de usuários e relatórios
+### 🔧 Funcionalidades
+- **Sistema de login** com diferentes perfis (Admin, Suporte, Usuário)
+- **Gestão de tickets** completa
+- **Busca de CEP** automática via ViaCEP
+- **Cadastro de técnicos** com formulário completo
+- **Filtros e relatórios** avançados
+- **Notificações** em tempo real
 
-### 📋 Gestão de Chamados
-
-* Abertura de chamados com categorias (Hardware, Software, Rede, E-mail, Outros)
-* Sistema de prioridades (Baixa, Média, Alta, Crítica)
-* Status de acompanhamento (Aberto, Em Andamento, Fechado)
-* Atribuição de chamados para agentes de suporte
-* Histórico completo de alterações
-
-### 👥 Gerenciamento de Usuários (Admin)
-
-* Criação e edição de usuários
-* Ativação/desativação de contas
-* Controle de tipos de acesso
-* Relatórios de performance
-
-### 📊 Relatórios e Analytics (Admin)
-
-* Gráficos de chamados por status
-* Análise de prioridades
-* Performance dos agentes
-* Tempo médio de resolução
-
-## 🎨 Interface
-
-* **Design Moderno:** Interface limpa e profissional
-* **Totalmente Responsivo:** Funciona em desktop, tablet e mobile
-* **Logomarca Controll IT:** Integrada com a identidade visual da empresa
-* **Animações Suaves:** Transições e efeitos visuais modernos
-* **Tema Consistente:** Paleta de cores profissional
-
-## 🛠️ Tecnologias Utilizadas
-
-* **HTML5:** Estrutura semântica e acessível
-* **CSS3:** Estilização moderna com Grid, Flexbox e animações
-* **JavaScript ES6+:** Lógica de negócio e interatividade
-* **Chart.js:** Gráficos interativos para relatórios
-* **Font Awesome:** Ícones profissionais
-* **LocalStorage:** Persistência de dados no navegador
-
-## 📱 Responsividade
-
-O sistema é totalmente responsivo e se adapta a diferentes tamanhos de tela:
-
-* **Desktop:** Layout completo com todas as funcionalidades
-* **Tablet:** Interface otimizada para telas médias
-* **Mobile:** Menu hambúrguer, botões maiores e layout vertical
+### 🎯 Perfis de Usuário
+- **Administrador**: Acesso total ao sistema
+- **Suporte**: Gerenciamento de tickets e atribuições
+- **Usuário**: Criação e acompanhamento de chamados
 
 ## 🚀 Como Usar
 
-### 1. Acesso ao Sistema
-
-Abra o arquivo `index.html` em qualquer navegador moderno.
-
-### 2. Credenciais de Demonstração
-
-O sistema vem com usuários pré-configurados:
-
-| Tipo                  | Usuário | Senha    | Funcionalidades          |
-| --------------------- | ------- | -------- | ------------------------ |
-| **Usuário Padrão**    | usuario | senha123 | Abertura de chamados     |
-| **Agente de Suporte** | suporte | senha123 | Gestão de chamados       |
-| **Administrador**     | admin   | senha123 | Todas as funcionalidades |
-
-### 3. Fluxo de Trabalho
-
-#### Para Usuários Padrão:
-
-1. Faça login com suas credenciais
-2. Visualize estatísticas dos seus chamados
-3. Abra novos chamados preenchendo o formulário
-4. Acompanhe o status dos seus chamados
-
-#### Para Agentes de Suporte:
-
-1. Faça login e acesse o dashboard de suporte
-2. Visualize todos os chamados abertos
-3. Use os filtros para organizar a visualização
-4. Atribua chamados para você mesmo
-5. Altere o status conforme o progresso
-6. Feche chamados quando resolvidos
-
-#### Para Administradores:
-
-1. Acesse o dashboard administrativo
-2. **Aba Chamados:** Gerencie todos os chamados do sistema
-3. **Aba Usuários:** Crie e gerencie contas de usuários
-4. **Aba Relatórios:** Visualize analytics e métricas
-
-## 🔧 Personalização
-
-### Cores e Tema
-
-As cores podem ser alteradas no arquivo `scripts/styles.css` através das variáveis CSS:
-
-```css
-:root {
-    --primary-color: #0f766e;
-    --primary-light: #14b8a6;
-    --secondary-color: #334155;
-    /* ... outras variáveis */
-}
+### Instalação Local
+1. Clone o repositório:
+```bash
+git clone https://github.com/douglasmouradev/help-desk-controll.git
 ```
 
-### Logomarca
+2. Abra o arquivo `index.html` no navegador
 
-Para alterar a logomarca, substitua o arquivo `logo-controll-it.png` no diretório raiz.
+### Credenciais de Teste
+- **Administrador**: `admin` / `admin123`
+- **Suporte**: `suporte` / `suporte123`
+- **Usuário**: `usuario` / `usuario123`
 
-### Funcionalidades
+## 🎨 Paleta de Cores
 
-O código JavaScript está bem estruturado em classes, facilitando a adição de novas funcionalidades.
+### Cores Principais
+- **Vermelho Principal**: #dc2626
+- **Vermelho Claro**: #ef4444
+- **Vermelho Escuro**: #b91c1c
+- **Azul Principal**: #1e40af
+- **Azul Claro**: #3b82f6
+- **Azul Escuro**: #1e3a8a
 
-## 💾 Persistência de Dados
+## 📁 Estrutura do Projeto
 
-Os dados são armazenados localmente no navegador usando `localStorage`:
+```
+help-desk-controll/
+├── index.html              # Sistema principal
+├── logo-controll-it.svg    # Logo oficial
+├── scripts/
+│   ├── styles.css          # Estilos CSS organizados
+│   ├── script-vercel.js    # JavaScript otimizado
+│   └── notifications.css   # Estilos de notificações
+├── api/                    # APIs do sistema
+├── database/               # Scripts de banco de dados
+├── docs/                   # Documentação
+├── tests/                  # Testes do sistema
+└── test-*.html            # Páginas de teste
+```
 
-* **Chamados:** `helpDeskTickets`
-* **Usuários:** `helpDeskUsers`
-* **Usuário Logado:** `currentUser`
+## 🧪 Páginas de Teste
 
-## 🔒 Segurança
+- **`test.html`** - Teste simples do sistema
+- **`test-final.html`** - Teste completo com demonstração
+- **`test-cores.html`** - Demonstração da paleta de cores
+- **`test-logo.html`** - Teste da logo em diferentes tamanhos
 
-⚠️ **Nota de Segurança:** Este é um sistema de demonstração. Para uso em produção, considere:
+## 🔧 Tecnologias Utilizadas
 
-* Implementar autenticação com backend seguro
-* Criptografar senhas
-* Validar dados no servidor
-* Implementar HTTPS
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilos modernos com variáveis
+- **JavaScript ES6+** - Lógica interativa
+- **SVG** - Logo vetorial responsiva
+- **LocalStorage** - Persistência de dados
+- **ViaCEP API** - Busca de endereços
 
-## 🌟 Recursos Avançados
+## 📱 Responsividade
 
-* **Filtros Dinâmicos:** Filtre chamados por status, prioridade e usuário
-* **Gráficos Interativos:** Visualizações com Chart.js
-* **Modais Responsivos:** Detalhes de chamados em popups
-* **Validação de Formulários:** Validação client-side
-* **Estados de Loading:** Feedback visual para o usuário
-* **Animações CSS:** Transições suaves entre estados
+O sistema é totalmente responsivo e funciona perfeitamente em:
+- 📱 **Mobile** (320px+)
+- 📱 **Tablet** (768px+)
+- 💻 **Desktop** (1024px+)
+- 🖥️ **Large screens** (1440px+)
 
-## 📞 Suporte
+## 🎯 Funcionalidades por Perfil
 
-Para dúvidas ou sugestões sobre o sistema, entre em contato com a equipe de desenvolvimento da Controll IT.
+### 👤 Usuário
+- Criar novos chamados
+- Acompanhar status dos tickets
+- Busca automática de CEP
+- Visualizar histórico de chamados
+
+### 🛠️ Suporte
+- Visualizar todos os chamados
+- Atribuir tickets para si
+- Alterar status dos chamados
+- Filtros por status e prioridade
+
+### 👑 Administrador
+- Gerenciar usuários
+- Visualizar relatórios
+- Acesso total ao sistema
+- Configurações avançadas
+
+## 🚀 Deploy
+
+### Vercel (Recomendado)
+1. Conecte o repositório ao Vercel
+2. Configure as variáveis de ambiente
+3. Deploy automático
+
+### Heroku
+1. Instale o Heroku CLI
+2. Execute: `heroku create`
+3. Configure as variáveis de ambiente
+4. Deploy: `git push heroku main`
+
+## 📊 Status do Projeto
+
+- ✅ **Sistema completo** e funcional
+- ✅ **Interface responsiva** implementada
+- ✅ **Logo oficial** integrada
+- ✅ **Paleta de cores** aplicada
+- ✅ **Testes** implementados
+- ✅ **Documentação** completa
+
+## 🤝 Contribuição
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 📞 Contato
+
+**Controll IT Engineering Technology**
+- Website: [controllit.com.br](https://controllit.com.br)
+- Email: suporte@controllit.com.br
 
 ---
 
-**Desenvolvido com ❤️ pela Controll IT**
+Desenvolvido com ❤️ para Controll IT Engineering Technology
