@@ -1,0 +1,1 @@
+{  "name": "Controll IT-helpdesk",  "version": "1.0.0",  "description": "Sistema Help Desk Controll IT Engineering Technology",  "main": "index.php",  "scripts": {    "start": "php -S 0.0.0.0:$PORT index.php"  },  "keywords": ["helpdesk", "php", "tickets", "support"],  "author": "Controll IT Engineering Technology",  "license": "MIT"}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Controll IT Help Desk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-section h3 {
+            color: #1e40af;
+            margin-top: 0;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .success { background: #d1fae5; color: #065f46; }
+        .error { background: #fecaca; color: #dc2626; }
+        .info { background: #dbeafe; color: #1e40af; }
+        .credentials {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .credential-item {
+            margin: 5px 0;
+            font-family: monospace;
+            background: white;
+            padding: 8px;
+            border-radius: 3px;
+            border-left: 3px solid #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo-controll-it.svg" alt="Logo Controll IT Engineering Technology" />
+            <h1>Controll IT Help Desk</h1>
+            <p>Sistema de gestão de chamados técnicos</p>
+        </div>
+
+        <div class="test-section">
+            <h3>🔧 Status do Sistema</h3>
+            <p><span class="status success">✓ Sistema funcionando</span></p>
+            <p><span class="status success">✓ Logo carregada</span></p>
+            <p><span class="status success">✓ Paleta de cores aplicada</span></p>
+            <p><span class="status success">✓ Branding atualizado</span></p>
+        </div>
+
+        <div class="test-section">
+            <h3>🎨 Paleta de Cores</h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <div style="width: 60px; height: 60px; background: #1e40af; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; text-align: center;">Azul Royal<br>#1e40af</div>
+                <div style="width: 60px; height: 60px; background: #3b82f6; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; text-align: center;">Azul Claro<br>#3b82f6</div>
+                <div style="width: 60px; height: 60px; background: #dc2626; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; text-align: center;">Vermelho<br>#dc2626</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🔑 Credenciais de Teste</h3>
+            <div class="credentials">
+                <div class="credential-item">
+                    <strong>Administrador:</strong> admin / admin123
+                </div>
+                <div class="credential-item">
+                    <strong>Suporte:</strong> suporte / suporte123
+                </div>
+                <div class="credential-item">
+                    <strong>Usuário:</strong> usuario / usuario123
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📋 Funcionalidades</h3>
+            <ul>
+                <li>✅ Login com diferentes perfis (Admin, Suporte, Usuário)</li>
+                <li>✅ Criação de chamados</li>
+                <li>✅ Busca de CEP automática</li>
+                <li>✅ Cadastro de técnicos</li>
+                <li>✅ Gerenciamento de usuários</li>
+                <li>✅ Filtros e relatórios</li>
+                <li>✅ Interface responsiva</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h3>🚀 Como Usar</h3>
+            <ol>
+                <li>Abra o arquivo <code>index.html</code> no navegador</li>
+                <li>Use as credenciais acima para fazer login</li>
+                <li>Explore as diferentes funcionalidades do sistema</li>
+                <li>Teste a criação de chamados e busca de CEP</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <h3>🔗 Links Úteis</h3>
+            <p><a href="index.html" style="color: #1e40af; text-decoration: none;">→ Acessar Sistema Principal</a></p>
+            <p><a href="scripts/styles.css" style="color: #1e40af; text-decoration: none;">→ Ver Arquivo CSS</a></p>
+            <p><a href="scripts/script-vercel.js" style="color: #1e40af; text-decoration: none;">→ Ver Arquivo JavaScript</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<?php// Script para gerar hash da senha "senha123"$password = 'senha123';$hash = password_hash($password, PASSWORD_DEFAULT);echo "Senha: " . $password . "\n";echo "Hash: " . $hash . "\n";// Testar se o hash funcionaif (password_verify($password, $hash)) {    echo "Hash válido!\n";} else {    echo "Hash inválido!\n";}?>

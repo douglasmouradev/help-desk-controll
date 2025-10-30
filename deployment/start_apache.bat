@@ -1,0 +1,1 @@
+@echo offecho Iniciando Apache do XAMPP...cd /d "C:\xampp"apache\bin\httpd.exe -D FOREGROUND

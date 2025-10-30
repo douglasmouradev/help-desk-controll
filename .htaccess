@@ -1,0 +1,1 @@
+DirectoryIndex index.html index.phpRewriteEngine OnRewriteCond %{REQUEST_FILENAME} !-fRewriteCond %{REQUEST_FILENAME} !-dRewriteRule ^(.*)$ index.php [QSA,L]

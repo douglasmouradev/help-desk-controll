@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "name": "controll-it-helpdesk",
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/**/*.php",
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "SYSTEM_NAME": "Controll IT Help Desk",
+    "SYSTEM_EMAIL": "suporte@controllit.com.br",
+    "SYSTEM_URL": "https://controll-it-helpdesk.vercel.app"
+  }
+}

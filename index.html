@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controll IT - Help Desk</title>
+    <link rel="stylesheet" href="scripts/styles.css">
+    <link rel="stylesheet" href="scripts/tickets_table.css">
+    <link rel="stylesheet" href="scripts/notifications.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header com Logo -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo-controll-it.svg" alt="Logo Controll IT Engineering Technology" class="logo-icon" />
+                <div class="logo-text">
+                    <h1>Controll IT</h1>
+                    <p>Help Desk</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <div class="nav-toggle" id="navToggle" aria-label="Menu de navegação">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="nav-link active" data-page="login" aria-current="page">Login</a></li>
+                    <li><a href="#" class="nav-link" data-page="technicianRegisterPage">Cadastro Técnicos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Login Page -->
+        <div id="loginPage" class="page active">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h2>Controll IT Help Desk</h2>
+                        <p>Sistema de gestão de chamados técnicos</p>
+                        <div class="login-info">
+                            <p><i class="fas fa-shield-alt"></i> Sistema seguro e confiável</p>
+                        </div>
+                    </div>
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="username">Usuário:</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <div class="login-options">
+                            <a href="#" id="forgotPasswordLink" class="forgot-password">Esqueceu sua senha?</a>
+                        </div>
+                    </form>
+                    
+                    <!-- Credenciais de demonstração -->
+                    <div class="demo-credentials">
+                        <h3>Credenciais de Demonstração</h3>
+                        <div class="credential-item">
+                            <strong>Administrador:</strong> admin / admin123
+                        </div>
+                        <div class="credential-item">
+                            <strong>Suporte:</strong> suporte / suporte123
+                        </div>
+                        <div class="credential-item">
+                            <strong>Usuário:</strong> usuario / usuario123
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technician Register Page -->
+        <div id="technicianRegisterPage" class="page">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h2>Cadastro de Técnicos</h2>
+                        <p>Preencha os dados abaixo para cadastro no sistema</p>
+                    </div>
+                    <form id="technicianRegisterForm" class="login-form">
+                        <div class="form-group">
+                            <label for="tecNome">NOME</label>
+                            <input type="text" id="tecNome" name="name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tecNaturalidade">NATURALIDADE</label>
+                                <input type="text" id="tecNaturalidade" name="naturalidade">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecGenero">GENERO</label>
+                                <input type="text" id="tecGenero" name="genero">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tecEmail">EMAIL</label>
+                                <input type="email" id="tecEmail" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tecRg">RG</label>
+                                <input type="text" id="tecRg" name="rg">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecCpf">CPF</label>
+                                <input type="text" id="tecCpf" name="cpf" maxlength="14" placeholder="000.000.000-00" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tecNascimento">DATA DE NASCIMENTO</label>
+                                <input type="date" id="tecNascimento" name="data_nascimento">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecMae">NOME DA MAE</label>
+                                <input type="text" id="tecMae" name="nome_mae">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecPai">NOME DO PAI</label>
+                                <input type="text" id="tecPai" name="nome_pai">
+                            </div>
+                        </div>
+
+                        <div class="section-header"><h3>Endereço</h3></div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tecCep">CEP</label>
+                                <input type="text" id="tecCep" name="cep" maxlength="9" placeholder="00000-000">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecEndereco">ENDERECO</label>
+                                <input type="text" id="tecEndereco" name="endereco">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tecNumero">N</label>
+                                <input type="text" id="tecNumero" name="numero">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecBairro">BAIRRO</label>
+                                <input type="text" id="tecBairro" name="bairro">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecCidade">CIDADE</label>
+                                <input type="text" id="tecCidade" name="cidade">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecEstado">ESTADO</label>
+                                <input type="text" id="tecEstado" name="estado" maxlength="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecPais">PAIS</label>
+                                <input type="text" id="tecPais" name="pais" value="Brasil">
+                            </div>
+                        </div>
+
+                        <div class="section-header"><h3>Contato</h3></div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tecCel1">CELULAR 1</label>
+                                <input type="text" id="tecCel1" name="celular1">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecCel2">CELULAR 2</label>
+                                <input type="text" id="tecCel2" name="celular2">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecWhats">WHATS</label>
+                                <input type="text" id="tecWhats" name="whats">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecTelFixo">TELEFONE FIXO</label>
+                                <input type="text" id="tecTelFixo" name="telefone_fixo">
+                            </div>
+                        </div>
+
+                        <div class="section-header"><h3>Referência Bancária</h3></div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tecChavePix">CHAVE PIX</label>
+                                <input type="text" id="tecChavePix" name="chave_pix">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecBanco">BANCO</label>
+                                <input type="text" id="tecBanco" name="banco">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecCodBanco">COD BANCO</label>
+                                <input type="text" id="tecCodBanco" name="cod_banco">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecAgencia">AGENCIA</label>
+                                <input type="text" id="tecAgencia" name="agencia">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecConta">CONTA</label>
+                                <input type="text" id="tecConta" name="conta">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecTipoConta">TIPO DE CONTA</label>
+                                <select id="tecTipoConta" name="tipo_conta">
+                                    <option value="corrente">CORRENTE</option>
+                                    <option value="poupanca">POUPANÇA</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tecOperacao">OPERACAO</label>
+                                <input type="text" id="tecOperacao" name="operacao">
+                            </div>
+                            <div class="form-group">
+                                <label for="tecFavorecido">FAVORECIDO</label>
+                                <input type="text" id="tecFavorecido" name="favorecido">
+                            </div>
+                        </div>
+
+                        <div class="section-header"><h3>Se for Empresa (opcional)</h3></div>
+                        <div class="form-group">
+                            <label for="empRazao">RAZAO SOCIAL</label>
+                            <input type="text" id="empRazao" name="emp_razao_social">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="empFantasia">NOME FANTASIA</label>
+                                <input type="text" id="empFantasia" name="emp_nome_fantasia">
+                            </div>
+                            <div class="form-group">
+                                <label for="empCnpj">CNPJ</label>
+                                <input type="text" id="empCnpj" name="emp_cnpj">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="empInsEstadual">INSCRICAO ESTADUAL</label>
+                                <input type="text" id="empInsEstadual" name="emp_inscricao_estadual">
+                            </div>
+                            <div class="form-group">
+                                <label for="empInsMunicipal">INCRICAO MUNICIPAL</label>
+                                <input type="text" id="empInsMunicipal" name="emp_inscricao_municipal">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="empCep">CEP</label>
+                                <input type="text" id="empCep" name="emp_cep" maxlength="9" placeholder="00000-000">
+                            </div>
+                            <div class="form-group">
+                                <label for="empEndereco">ENDERECO</label>
+                                <input type="text" id="empEndereco" name="emp_endereco">
+                            </div>
+                            <div class="form-group">
+                                <label for="empNumero">N</label>
+                                <input type="text" id="empNumero" name="emp_numero">
+                            </div>
+                            <div class="form-group">
+                                <label for="empBairro">BAIRRO</label>
+                                <input type="text" id="empBairro" name="emp_bairro">
+                            </div>
+                            <div class="form-group">
+                                <label for="empCidade">CIDADE</label>
+                                <input type="text" id="empCidade" name="emp_cidade">
+                            </div>
+                            <div class="form-group">
+                                <label for="empEstado">ESTADO</label>
+                                <input type="text" id="empEstado" name="emp_estado" maxlength="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="empPais">PAIS</label>
+                                <input type="text" id="empPais" name="emp_pais" value="Brasil">
+                            </div>
+                        </div>
+
+                        <div class="section-header"><h3>Referência Bancária da Empresa (opcional)</h3></div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="empChavePix">CHAVE PIX</label>
+                                <input type="text" id="empChavePix" name="emp_chave_pix">
+                            </div>
+                            <div class="form-group">
+                                <label for="empBanco">BANCO</label>
+                                <input type="text" id="empBanco" name="emp_banco">
+                            </div>
+                            <div class="form-group">
+                                <label for="empCodBanco">COD BANCO</label>
+                                <input type="text" id="empCodBanco" name="emp_cod_banco">
+                            </div>
+                            <div class="form-group">
+                                <label for="empAgencia">AGENCIA</label>
+                                <input type="text" id="empAgencia" name="emp_agencia">
+                            </div>
+                            <div class="form-group">
+                                <label for="empConta">CONTA</label>
+                                <input type="text" id="empConta" name="emp_conta">
+                            </div>
+                            <div class="form-group">
+                                <label for="empTipoConta">TIPO DE CONTA</label>
+                                <select id="empTipoConta" name="emp_tipo_conta">
+                                    <option value="corrente">CORRENTE</option>
+                                    <option value="poupanca">POUPANÇA</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="empOperacao">OPERACAO</label>
+                                <input type="text" id="empOperacao" name="emp_operacao">
+                            </div>
+                            <div class="form-group">
+                                <label for="empFavorecido">FAVORECIDO</label>
+                                <input type="text" id="empFavorecido" name="emp_favorecido">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Cadastrar Técnico</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Pages -->
+        <div id="userDashboard" class="page">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h2>Dashboard - Usuário</h2>
+                    <div class="user-info">
+                        <span id="userName">Usuário</span>
+                        <button id="logoutBtn" class="btn btn-secondary">Sair</button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <i class="fas fa-ticket-alt"></i>
+                            <h3 id="userOpenTickets">0</h3>
+                            <p>Chamados Abertos</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <h3 id="userPendingTickets">0</h3>
+                            <p>Em Andamento</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h3 id="userClosedTickets">0</h3>
+                            <p>Finalizados</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h3>Novo Chamado</h3>
+                        </div>
+                        <form id="newTicketForm" class="ticket-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="ticketTitle">Título:</label>
+                                    <input type="text" id="ticketTitle" name="title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ticketPriority">Prioridade:</label>
+                                    <select id="ticketPriority" name="priority">
+                                        <option value="baixa">Baixa</option>
+                                        <option value="media" selected>Média</option>
+                                        <option value="alta">Alta</option>
+                                        <option value="critica">Crítica</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ticketCategory">Categoria:</label>
+                                <select id="ticketCategory" name="category">
+                                    <option value="hardware">Hardware</option>
+                                    <option value="software">Software</option>
+                                    <option value="rede">Rede</option>
+                                    <option value="email">E-mail</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="requesterName">Nome de quem está abrindo o chamado:</label>
+                                    <input type="text" id="requesterName" name="requester_name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="requesterRegistration">Matrícula:</label>
+                                    <input type="text" id="requesterRegistration" name="requester_registration" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="unitSigla">Unidade/Sigla da Loja/Agência:</label>
+                                <input type="text" id="unitSigla" name="unit_sigla" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="zipcode">CEP:</label>
+                                    <input type="text" id="zipcode" name="zipcode" placeholder="00000-000" maxlength="9" required>
+                                    <button type="button" id="searchCepBtn" class="btn btn-sm btn-secondary" style="margin-top: 5px;">Buscar CEP</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Endereço Completo:</label>
+                                <input type="text" id="address" name="address" readonly>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">Cidade:</label>
+                                    <input type="text" id="city" name="city" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">Estado (UF):</label>
+                                    <input type="text" id="state" name="state" maxlength="2" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ticketDescription">Descrição:</label>
+                                <textarea id="ticketDescription" name="description" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Abrir Chamado</button>
+                        </form>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h3>Meus Chamados</h3>
+                        </div>
+                        <div id="userTicketsTable" class="tickets-table-container">
+                            <table class="tickets-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Título</th>
+                                        <th>Status</th>
+                                        <th>Prioridade</th>
+                                        <th>Data</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userTicketsBody">
+                                    <!-- Tickets will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Dashboard -->
+        <div id="supportDashboard" class="page">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h2>Dashboard - Suporte</h2>
+                    <div class="user-info">
+                        <span id="supportUserName">Suporte</span>
+                        <button id="supportLogoutBtn" class="btn btn-secondary">Sair</button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <i class="fas fa-ticket-alt"></i>
+                            <h3 id="supportOpenTickets">0</h3>
+                            <p>Abertos</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-user-cog"></i>
+                            <h3 id="supportAssignedTickets">0</h3>
+                            <p>Atribuídos a Mim</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <h3 id="supportInProgressTickets">0</h3>
+                            <p>Em Andamento</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h3 id="supportClosedTickets">0</h3>
+                            <p>Finalizados</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h3>Todos os Chamados</h3>
+                            <div class="filter-controls">
+                                <select id="statusFilter">
+                                    <option value="">Todos os Status</option>
+                                    <option value="aberto">Aberto</option>
+                                    <option value="em_andamento">Em Andamento</option>
+                                    <option value="fechado">Fechado</option>
+                                </select>
+                                <select id="priorityFilter">
+                                    <option value="">Todas as Prioridades</option>
+                                    <option value="baixa">Baixa</option>
+                                    <option value="media">Média</option>
+                                    <option value="alta">Alta</option>
+                                    <option value="critica">Crítica</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="supportTicketsTable" class="tickets-table-container">
+                            <table class="tickets-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Título</th>
+                                        <th>Usuário</th>
+                                        <th>Status</th>
+                                        <th>Prioridade</th>
+                                        <th>Data</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="supportTicketsBody">
+                                    <!-- Tickets will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" class="page">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h2>Dashboard - Administrador</h2>
+                    <div class="user-info">
+                        <span id="adminUserName">Administrador</span>
+                        <button id="adminLogoutBtn" class="btn btn-secondary">Sair</button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <i class="fas fa-ticket-alt"></i>
+                            <h3 id="adminTotalTickets">0</h3>
+                            <p>Total de Chamados</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <h3 id="adminTotalUsers">0</h3>
+                            <p>Usuários</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-user-cog"></i>
+                            <h3 id="adminSupportUsers">0</h3>
+                            <p>Agentes de Suporte</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3 id="adminAvgResolutionTime">0h</h3>
+                            <p>Tempo Médio Resolução</p>
+                        </div>
+                    </div>
+
+                    <div class="admin-tabs">
+                        <button class="tab-btn active" data-tab="tickets">Chamados</button>
+                        <button class="tab-btn" data-tab="users">Usuários</button>
+                        <button class="tab-btn" data-tab="reports">Relatórios</button>
+                    </div>
+
+                    <!-- Tickets Tab -->
+                    <div id="ticketsTab" class="tab-content active">
+                        <div class="dashboard-section">
+                            <div class="section-header">
+                                <h3>Gerenciamento de Chamados</h3>
+                                <div class="filter-controls">
+                                    <select id="adminStatusFilter">
+                                        <option value="">Todos os Status</option>
+                                        <option value="aberto">Aberto</option>
+                                        <option value="em_andamento">Em Andamento</option>
+                                        <option value="fechado">Fechado</option>
+                                    </select>
+                                    <select id="adminPriorityFilter">
+                                        <option value="">Todas as Prioridades</option>
+                                        <option value="baixa">Baixa</option>
+                                        <option value="media">Média</option>
+                                        <option value="alta">Alta</option>
+                                        <option value="critica">Crítica</option>
+                                    </select>
+                                    <select id="adminUserFilter">
+                                        <option value="">Todos os Usuários</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="adminTicketsTable" class="tickets-table-container">
+                                <table class="tickets-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Título</th>
+                                            <th>Usuário</th>
+                                            <th>Status</th>
+                                            <th>Prioridade</th>
+                                            <th>Atribuído a</th>
+                                            <th>Data</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="adminTicketsBody">
+                                        <!-- Tickets will be populated here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Users Tab -->
+                    <div id="usersTab" class="tab-content">
+                        <div class="dashboard-section">
+                            <div class="section-header">
+                                <h3>Gerenciamento de Usuários</h3>
+                                <button id="addUserBtn" class="btn btn-primary">Adicionar Usuário</button>
+                            </div>
+                            <div id="usersTable" class="tickets-table-container">
+                                <table class="tickets-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nome</th>
+                                            <th>Email</th>
+                                            <th>Tipo</th>
+                                            <th>Status</th>
+                                            <th>Data Criação</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="usersBody">
+                                        <!-- Users will be populated here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reports Tab -->
+                    <div id="reportsTab" class="tab-content">
+                        <div class="dashboard-section">
+                            <div class="section-header">
+                                <h3>Relatórios</h3>
+                            </div>
+                            <div class="reports-grid">
+                                <div class="report-card">
+                                    <h4>Chamados por Status</h4>
+                                    <canvas id="statusChart"></canvas>
+                                </div>
+                                <div class="report-card">
+                                    <h4>Chamados por Prioridade</h4>
+                                    <canvas id="priorityChart"></canvas>
+                                </div>
+                                <div class="report-card">
+                                    <h4>Performance dos Agentes</h4>
+                                    <canvas id="agentChart"></canvas>
+                                </div>
+                                <div class="report-card">
+                                    <h4>Tempo de Resolução</h4>
+                                    <div id="resolutionTimeStats">
+                                        <p>Média: <span id="avgResolution">0h</span></p>
+                                        <p>Mínimo: <span id="minResolution">0h</span></p>
+                                        <p>Máximo: <span id="maxResolution">0h</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Detalhes do Chamado</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Ticket details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="userModalTitle">Adicionar Usuário</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="userName">Nome:</label>
+                        <input type="text" id="userName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userClientName">Cliente (Sonda, Simpress, etc):</label>
+                        <input type="text" id="userClientName" name="client_name" placeholder="Ex: Sonda, Simpress">
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email:</label>
+                        <input type="email" id="userEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPassword">Senha:</label>
+                        <input type="password" id="userPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userType">Tipo de Usuário:</label>
+                        <select id="userType" name="type">
+                            <option value="user">Usuário Padrão</option>
+                            <option value="support">Suporte</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Recuperar Senha</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label for="forgotEmail">Email:</label>
+                        <input type="email" id="forgotEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="forgotUsername">Usuário:</label>
+                        <input type="text" id="forgotUsername" name="username" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Link de Recuperação</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/script-vercel.js"></script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Paleta de Cores - Controll IT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .color-box {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .color-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .color-code {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: #f8fafc;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        .usage-examples {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .usage-examples h3 {
+            color: #dc2626;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .example-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .example-card h4 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-example {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-example {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+        
+        .btn-secondary-example {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+        
+        .btn-example:hover {
+            transform: translateY(-2px);
+        }
+        
+        .badge-example {
+            display: inline-block;
+            padding: 6px 12px;
+            margin: 5px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .badge-primary {
+            background: #fecaca;
+            color: #dc2626;
+        }
+        
+        .badge-secondary {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .comparison {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .comparison h3 {
+            color: #dc2626;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .old-colors, .new-colors {
+            text-align: center;
+        }
+        
+        .old-colors h4 {
+            color: #6b7280;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .new-colors h4 {
+            color: #dc2626;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .color-comparison {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .color-item {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .action-buttons {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .color-palette {
+                grid-template-columns: 1fr;
+            }
+            
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Nova Paleta de Cores</h1>
+            <p>Controll IT Help Desk - Vermelho e Azul</p>
+        </div>
+        
+        <div class="content">
+            <div class="color-palette">
+                <div class="color-card">
+                    <div class="color-box" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+                        Vermelho<br>Principal
+                    </div>
+                    <div class="color-name">Vermelho Principal</div>
+                    <div class="color-code">#dc2626</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-box" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                        Vermelho<br>Claro
+                    </div>
+                    <div class="color-name">Vermelho Claro</div>
+                    <div class="color-code">#ef4444</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-box" style="background: linear-gradient(135deg, #b91c1c, #dc2626);">
+                        Vermelho<br>Escuro
+                    </div>
+                    <div class="color-name">Vermelho Escuro</div>
+                    <div class="color-code">#b91c1c</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-box" style="background: linear-gradient(135deg, #1e40af, #3b82f6);">
+                        Azul<br>Principal
+                    </div>
+                    <div class="color-name">Azul Principal</div>
+                    <div class="color-code">#1e40af</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-box" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);">
+                        Azul<br>Claro
+                    </div>
+                    <div class="color-name">Azul Claro</div>
+                    <div class="color-code">#3b82f6</div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-box" style="background: linear-gradient(135deg, #1e3a8a, #1e40af);">
+                        Azul<br>Escuro
+                    </div>
+                    <div class="color-name">Azul Escuro</div>
+                    <div class="color-code">#1e3a8a</div>
+                </div>
+            </div>
+            
+            <div class="usage-examples">
+                <h3>🎨 Exemplos de Uso</h3>
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>Botões</h4>
+                        <a href="#" class="btn-example btn-primary-example">Botão Principal</a>
+                        <a href="#" class="btn-example btn-secondary-example">Botão Secundário</a>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>Badges</h4>
+                        <span class="badge-example badge-primary">Alta Prioridade</span>
+                        <span class="badge-example badge-secondary">Informação</span>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>Gradientes</h4>
+                        <div style="height: 60px; background: linear-gradient(135deg, #dc2626, #ef4444); border-radius: 8px; margin: 10px 0;"></div>
+                        <div style="height: 60px; background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 8px; margin: 10px 0;"></div>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h4>Cards</h4>
+                        <div style="padding: 20px; background: #fecaca; color: #dc2626; border-radius: 8px; margin: 5px 0;">
+                            Card com cor vermelha
+                        </div>
+                        <div style="padding: 20px; background: #dbeafe; color: #1e40af; border-radius: 8px; margin: 5px 0;">
+                            Card com cor azul
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comparison">
+                <h3>🔄 Comparação de Cores</h3>
+                <div class="comparison-grid">
+                    <div class="old-colors">
+                        <h4>Antes (Azul Principal)</h4>
+                        <div class="color-comparison">
+                            <div class="color-item" style="background: #1e40af;">Azul</div>
+                            <div class="color-item" style="background: #dc2626;">Vermelho</div>
+                        </div>
+                        <p>Azul como cor principal</p>
+                    </div>
+                    
+                    <div class="new-colors">
+                        <h4>Agora (Vermelho Principal)</h4>
+                        <div class="color-comparison">
+                            <div class="color-item" style="background: #dc2626;">Vermelho</div>
+                            <div class="color-item" style="background: #1e40af;">Azul</div>
+                        </div>
+                        <p>Vermelho como cor principal</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn">🚀 Ver no Sistema Principal</a>
+                <a href="test-final.html" class="btn btn-secondary">🧪 Página de Teste Final</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
