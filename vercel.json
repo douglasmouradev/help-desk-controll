@@ -13,6 +13,14 @@
   ],
   "routes": [
     {
+      "src": "/tests/.*",
+      "status": 404
+    },
+    {
+      "src": "/test(?:-.*)?\.html",
+      "status": 404
+    },
+    {
       "src": "/api/(.*)",
       "dest": "/api/$1"
     },

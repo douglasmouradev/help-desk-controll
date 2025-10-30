@@ -1,1 +1,59 @@
-# Arquivos de configuração localconfig.local.php.env.env.local# Logs*.loglogs/error.logaccess.log# Arquivos temporários*.tmp*.temptemp/tmp/# Arquivos de backup*.bak*.backupbackup/# Arquivos do sistema.DS_StoreThumbs.dbdesktop.ini# IDEs.vscode/.idea/*.swp*.swo# Node modules (se houver)node_modules/# Arquivos de cachecache/*.cache# Arquivos de sessão PHPsessions/# Arquivos de upload temporáriosuploads/temp/# Arquivos de configuração sensíveisdatabase.inicredentials.php
+# Arquivos de configuração local
+config.local.php
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+logs/error.log
+access.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Arquivos de backup
+*.bak
+*.backup
+backup/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (se houver)
+node_modules/
+
+# Arquivos de cache
+cache/
+*.cache
+
+# Arquivos de sessão PHP
+sessions/
+
+# Arquivos de upload temporários
+uploads/temp/
+
+# Arquivos de configuração sensíveis
+database.ini
+credentials.php
+
+# Composer
+composer.phar
+composer.lock
+
+# Build/Cache
+.cache/
+.dist/
+dist/
+coverage/
