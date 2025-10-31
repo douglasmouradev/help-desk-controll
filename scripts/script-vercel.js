@@ -314,7 +314,8 @@ function handleAddUser(e) {
         password: formData.get('password'),
         name: formData.get('name'),
         email: formData.get('email'),
-        type: formData.get('type')
+        type: formData.get('type'),
+        client_name: formData.get('client_name') || null
     };
     
     users.push(user);
@@ -323,6 +324,11 @@ function handleAddUser(e) {
     e.target.reset();
     closeModal();
     showNotification('Usuário adicionado com sucesso!', 'success');
+    
+    // Atualizar filtro de clientes se estiver na página de suporte
+    if (currentUser && currentUser.type === 'support') {
+        setupClientFilter();
+    }
 }
 
 function loadUsers() {
@@ -382,6 +388,7 @@ function loadSupportData() {
     document.getElementById('supportInProgressTickets').textContent = inProgressTickets;
     document.getElementById('supportClosedTickets').textContent = closedTickets;
     
+    setupClientFilter();
     loadSupportTickets();
 }
 
@@ -409,6 +416,7 @@ function setupFilterListeners() {
     // Filtros do suporte
     const statusFilter = document.getElementById('statusFilter');
     const priorityFilter = document.getElementById('priorityFilter');
+    const clientFilter = document.getElementById('clientFilter');
     
     if (statusFilter) {
         statusFilter.addEventListener('change', filterSupportTickets);
@@ -416,6 +424,10 @@ function setupFilterListeners() {
     
     if (priorityFilter) {
         priorityFilter.addEventListener('change', filterSupportTickets);
+    }
+    
+    if (clientFilter) {
+        clientFilter.addEventListener('change', filterSupportTickets);
     }
     
     // Filtros do administrador
@@ -439,9 +451,11 @@ function setupFilterListeners() {
 function filterSupportTickets() {
     const statusFilter = document.getElementById('statusFilter');
     const priorityFilter = document.getElementById('priorityFilter');
+    const clientFilter = document.getElementById('clientFilter');
     
     const statusValue = statusFilter ? statusFilter.value : '';
     const priorityValue = priorityFilter ? priorityFilter.value : '';
+    const clientValue = clientFilter ? clientFilter.value : '';
     
     let filteredTickets = [...tickets];
     
@@ -453,7 +467,37 @@ function filterSupportTickets() {
         filteredTickets = filteredTickets.filter(ticket => ticket.priority === priorityValue);
     }
     
+    if (clientValue) {
+        filteredTickets = filteredTickets.filter(ticket => {
+            const user = users.find(u => u.id === ticket.userId);
+            return user && user.client_name === clientValue;
+        });
+    }
+    
     updateSupportTicketsTable(filteredTickets);
+}
+
+function setupClientFilter() {
+    const clientFilter = document.getElementById('clientFilter');
+    if (!clientFilter) return;
+    
+    // Obter lista de clientes únicos dos usuários que têm client_name
+    const uniqueClients = [...new Set(
+        users
+            .filter(user => user.client_name && user.client_name.trim() !== '')
+            .map(user => user.client_name.trim())
+    )].sort();
+    
+    // Limpar opções existentes (exceto a primeira)
+    clientFilter.innerHTML = '<option value="">Todos os Clientes</option>';
+    
+    // Adicionar opções de clientes
+    uniqueClients.forEach(client => {
+        const option = document.createElement('option');
+        option.value = client;
+        option.textContent = client;
+        clientFilter.appendChild(option);
+    });
 }
 
 function filterAdminTickets() {
